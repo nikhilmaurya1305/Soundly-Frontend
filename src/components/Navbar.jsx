@@ -2,7 +2,7 @@ import "./Navbar.css";
 
 function Navbar(){
     return(
-        <nav className="navBar">
+        <nav className="navbar">
             <div className="logo">
                 🎵_Soundly_🎵
             </div>

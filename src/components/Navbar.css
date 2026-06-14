@@ -1,38 +1,30 @@
-.navbar{
-    background-color: #121212;
-
+.navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 50px;
 
-    padding: 20px 60px;
-
-    border-bottom: 1px solid #8B5CF6;
-
-    position: sticky;
-    top: 0;
+    padding: 20px;
+    background-color: #111;
 }
 
-.logo{
-    color: #C084FC;
-
-    font-size: 32px;
+.logo {
+    color: #b57cff;
+    font-size: 2rem;
     font-weight: bold;
 }
 
-.nav-links{
+.nav-links {
     display: flex;
-    gap: 40px;
+    gap: 30px;
 }
 
-.nav-links a{
-    text-decoration: none;
+.nav-links a {
     color: white;
-    font-size: 18px;
-
-    transition: 0.3s;
+    text-decoration: none;
+    font-size: 1.1rem;
 }
 
-.nav-links a:hover{
-    color: #C084FC;
+.nav-links a:hover {
+    color: #b57cff;
 }
