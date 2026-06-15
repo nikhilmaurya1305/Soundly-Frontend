@@ -1,54 +1,55 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
 import api from "../services/api";
 import SongCard from "../components/SongCard";
 import Navbar from "../components/Navbar";
-import "./Home.css"
+import SearchBar from "../components/SearchBar";
+import "./Home.css";
 
-function Home(){
-
+function Home() {
     const [songs, setSongs] = useState([]);
     const [search, setSearch] = useState("");
 
-    useEffect(() => {api.get("/songs")
-        .then(response =>{
-            console.log(response.data)
-            setSongs(response.data)
-        })
-        .catch(error => {console.error(error)})
-    },[]);
+    useEffect(() => {
+        api.get("/songs")
+            .then((response) => {
+                console.log(response.data);
+                setSongs(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
 
-    return(
+    const filteredSongs = songs.filter((song) =>
+        song.title.toLowerCase().includes(search.toLowerCase())
+    );
+
+    return (
         <div>
-            <Navbar/>
+            <Navbar />
+
             <h1 className="page-title">
                 Welcome to Soundly :)
             </h1>
 
-            <div className="search-container">
-
-                <input
-                    type="text"
-                    placeholder="Search songs..."
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-
-            </div>
+            <SearchBar
+                search={search}
+                setSearch={setSearch}
+            />
 
             <div className="song-container">
-                {songs.filter(song =>
-                    song.title
-                        .toLowerCase()
-                        .includes(search.toLowerCase())
-                ).map(song => (
-                    <SongCard
-                        song={song}
-                        key={song.id}
-                    />
-                ))}
+                {filteredSongs.length > 0 ? (
+                    filteredSongs.map((song) => (
+                        <SongCard
+                            key={song.id}
+                            song={song}
+                        />
+                    ))
+                ) : (
+                    <p>No songs found</p>
+                )}
             </div>
         </div>
-
     );
 }
 
