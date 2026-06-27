@@ -1,0 +1,37 @@
+.profile-container{
+
+    width:500px;
+
+    margin:60px auto;
+
+    background:#1b1b1b;
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 0 20px rgba(138,43,226,.3);
+}
+
+.profile-container h1{
+
+    color:#b57cff;
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.profile-container h3{
+
+    margin-top:20px;
+
+    color:#b57cff;
+}
+
+.profile-container p{
+
+    font-size:18px;
+}

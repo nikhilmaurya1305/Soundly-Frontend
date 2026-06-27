@@ -1,4 +1,4 @@
-.audio-player{
+.audio-player {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -7,44 +7,38 @@
     height: 100px;
 
     background: #1b1b1b;
-
     border-top: 2px solid #8A2BE2;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 50px;
 
-    padding: 20px 40px;
-
+    padding: 0 30px;
     box-sizing: border-box;
 
-    box-shadow: 0 -5px 20px rgba(138,43,226,.35);
+    box-shadow: 0 -5px 20px rgba(138, 43, 226, 0.3);
 
     z-index: 1000;
 }
 
-.song-info{
-    width:250px;
+.song-info {
+    min-width: 250px;
 }
 
-.song-info h3{
-    color:#b57cff;
-    margin:0;
-    font-size:28px;
+.song-info h3 {
+    color: #b57cff;
+    margin: 0;
+    font-size: 28px;
 }
 
-.song-info p{
-    color:white;
-    margin-top:8px;
-    font-size:18px;
+.song-info p {
+    color: white;
+    margin-top: 6px;
+    font-size: 18px;
 }
 
-.audio-controls{
-    flex:1;
-    display:flex;
-    justify-content:flex-end;
-}
-
-.audio-controls audio{
-    width:550px;
+.audio-controls audio {
+    width: 600px;
+    max-width: 70vw;
 }
