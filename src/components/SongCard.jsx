@@ -1,6 +1,6 @@
 import "./SongCard.css"
 
-function SongCard({song}){
+function SongCard({song, onPlay}) {
     return(
         <div className="song-card">
             <h3>{song.title}</h3>
@@ -8,7 +8,13 @@ function SongCard({song}){
             <p>Genre: {song.genre}</p>
             <p>Likes: {song.likes}</p>
             <p>Dislikes: {song.dislikes}</p>
-            <hr />
+            <button
+                className="play-btn"
+                onClick={() => onPlay(song)}
+            >
+                ▶ Play
+            </button>
+            <hr/>
         </div>
     );
 }
